@@ -131,5 +131,25 @@ class Operation:
             # Checks if the divisor is zero to prevent undefined division.
             raise ValueError("Division by zero is not allowed.")  # Raises an error if division by zero is attempted.
         return a / b  # Divides `a` by `b` and returns the quotient.
+    @staticmethod
+    def power(a: float, b: float) -> float:
+        """
+        Raises the first floating-point number to the power of the second and returns the result.
 
-    
+        **Parameters:**
+        - `a (float)`: The base number.
+        - `b (float)`: The exponent.
+        
+        **Returns:**
+        - `float`: The result of `a` raised to the power of `b`.
+
+        **Example:**
+        >>> Operation.power(2.0, 3.0)
+        8.0
+
+         **Advantages of Static Methods in Utility Classes:**
+        - Static methods in utility classes like this one provide simple access to functions 
+          without requiring an instance of the class. This reduces overhead and makes 
+          the methods easily reusable in other parts of the program.
+        """
+        return a ** b
