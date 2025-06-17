@@ -362,6 +362,10 @@ def test_operations_invalid_input_types(calc_method, a, b, expected_exception):
         calc_method(a, b)
 
 
+# -----------------------------------------------------------------------------------
+# Test Power Method
+# -----------------------------------------------------------------------------------
+
 def test_power_positive():
     """
     Test the power method with two positive numbers.
@@ -378,3 +382,41 @@ def test_power_positive():
 
     # Assert
     assert result == expected_result, f"Expected {a} ** {b} to be {expected_result}, got {result}"
+
+def test_power_negative():
+    """
+    Test the power method with a positive base and a negative exponent.
+    
+    This test verifies that raising a positive number to a negative power returns the correct result.
+    """
+    # Arrange
+    a = 2.0
+    b = -3.0
+    expected_result = 0.125  # 2 ** -3 = 1 / (2 ** 3) = 1/8
+
+    # Act
+    result = Operation.power(a, b)
+
+    # Assert
+    assert result == expected_result, f"Expected {a} ** {b} to be {expected_result}, got {result}"
+
+# -----------------------------------------------------------------------------------
+# Test Modulus Method
+# -----------------------------------------------------------------------------------
+
+def test_modulus_positive():
+    """
+    Test the modulus method with two positive numbers.
+    
+    This test verifies that computing the modulus returns the correct remainder.
+    """
+    # Arrange
+    a = 10.0
+    b = 3.0
+    expected_result = 1.0
+
+    # Act
+    result = Operation.modulus(a, b)
+
+    # Assert
+    assert result == expected_result, f"Expected {a} % {b} to be {expected_result}, got {result}"
