@@ -176,3 +176,28 @@ class Operation:
           the methods easily reusable in other parts of the program.
         """
         return a % b  # Returns the remainder of a divided by b
+
+    @staticmethod
+    def percentage(a: float, b: float) -> float:
+        """
+        Calculates what percentage `a` is of `b`.
+
+        **Parameters:**
+        - `a (float)`: The part value.
+        - `b (float)`: The total value.
+        
+        **Returns:**
+        - `float`: The percentage that `a` is of `b`.
+
+        **Example:**
+        >>> Operation.percentage(25.0, 200.0)
+        12.5
+
+        **Advantages of Static Methods in Utility Classes:**
+        - Static methods in utility classes like this one provide simple access to functions 
+          without requiring an instance of the class. This reduces overhead and makes 
+          the methods easily reusable in other parts of the program.
+        """
+        if b == 0:
+          raise ValueError("Cannot calculate percentage with denominator zero.")
+        return (a / b) * 100

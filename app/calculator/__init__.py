@@ -140,6 +140,9 @@ def calculator() -> None:
                 print("Cannot divide by zero.")
                 print("Please enter a non-zero divisor.\n")
                 continue  # Prompt the user again
+            #except ValueError as e:
+            #    print(str(e))  # ✅ Match the exact exception message for the test to see
+            #    continue
             except Exception as e:
                 # Handle any other unforeseen exceptions
                 print(f"An error occurred during calculation: {e}")
@@ -164,6 +167,7 @@ def calculator() -> None:
             # Similar to KeyboardInterrupt, we handle the EOFError exception.
             print("\nEOF detected. Exiting calculator. Goodbye!")
             sys.exit(0)
+        
 
 
 # If this script is run directly, start the calculator REPL

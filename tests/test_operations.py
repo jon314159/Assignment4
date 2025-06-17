@@ -420,3 +420,40 @@ def test_modulus_positive():
 
     # Assert
     assert result == expected_result, f"Expected {a} % {b} to be {expected_result}, got {result}"
+
+# -----------------------------------------------------------------------------------
+# Test Percentage Method
+# -----------------------------------------------------------------------------------
+
+def test_percentage_positive():
+    """
+    Test the percentage method with two positive numbers.
+    
+    This test verifies that the method correctly calculates what percentage `a` is of `b`.
+    """
+    # Arrange
+    a = 25.0
+    b = 200.0
+    expected_result = 12.5  # 25 is 12.5% of 200
+
+    # Act
+    result = Operation.percentage(a, b)
+
+    # Assert
+    assert result == expected_result, f"Expected ({a} / {b}) * 100 to be {expected_result}, got {result}"
+
+import pytest
+
+def test_percentage_zero_denominator():
+    """
+    Test the percentage method with a denominator of zero.
+
+    This test verifies that passing zero as the second argument raises a ValueError.
+    """
+    # Arrange
+    a = 25.0
+    b = 0.0
+
+    # Act & Assert
+    with pytest.raises(ValueError, match="Cannot calculate percentage with denominator zero."):
+        Operation.percentage(a, b)

@@ -10,6 +10,8 @@ from io import StringIO
 
 # Import the functions to be tested
 from app.calculator import display_help, display_history, calculator
+from app.calculation import PercentageCalculation
+
 
 def test_display_help(capsys):
     """

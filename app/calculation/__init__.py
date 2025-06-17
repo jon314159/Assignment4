@@ -271,3 +271,16 @@ class ModulusCalculation(Calculation):
     def execute(self) -> float:
         # Calls the modulus method from the Operation module to perform the modulus.
         return Operation.modulus(self.a, self.b)  # pragma: no cover
+
+@CalculationFactory.register_calculation('percentage')
+class PercentageCalculation(Calculation):
+    """
+    PercentageCalculation represents a percentage operation.
+
+    By encapsulating the percentage logic here, we achieve a clear separation of 
+    concerns, making it easy to adjust the percentage logic without affecting other calculations.
+    """
+
+    def execute(self) -> float:
+        # Calls the percentage method from the Operation module to perform the calculation.
+        return Operation.percentage(self.a, self.b)  # pragma: no cover
